@@ -18,6 +18,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import laucher.joy.com.mylauncher.MyApp;
 import laucher.joy.com.mylauncher.R;
+import laucher.joy.com.mylauncher.activity.HomeActivity;
+import laucher.joy.com.mylauncher.activity.WeatherSettingActivity;
 import laucher.joy.com.mylauncher.entity.AdBean;
 import laucher.joy.com.mylauncher.utils.NetUtil;
 import laucher.joy.com.mylauncher.utils.PackgeManagerInfo;
@@ -85,13 +87,15 @@ public class SettingFragment extends CommonFragment
 
                 break;
             case R.id.weather_settings:
-                if (PackgeManagerInfo.getPackageName("com.hitutu.weathertv", getActivity())) {
+               /* if (PackgeManagerInfo.getPackageName("com.hitutu.weathertv", getActivity())) {
                     PackgeManagerInfo.getIntent("com.hitutu.weathertv", "com.hitutu.weathertv.MainActivity", getActivity());
                 } else {
 
                    // PackgeManagerInfo.startIntent(getActivity(), "http://app.shafa.com/apk/mojitianqi.html");http://www.hitutu.com/weather.html
                     PackgeManagerInfo.startIntent(getActivity(), "http://www.hitutu.com/weather.html");
-                }
+                }*/
+                Intent localIntent = new Intent(getContext(), WeatherSettingActivity.class);
+                startActivity(localIntent);
 
                 break;
             case R.id.about_us:

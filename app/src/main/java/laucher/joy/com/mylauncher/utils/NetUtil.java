@@ -3,28 +3,35 @@ package laucher.joy.com.mylauncher.utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.widget.Toast;
+import cz.msebera.android.httpclient.Header;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import org.apache.http.HttpResponse;
+/*import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.util.EntityUtils;
+import org.apache.http.util.EntityUtils;*/
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 
 import laucher.joy.com.mylauncher.MyApp;
+import laucher.joy.com.mylauncher.activity.IndexActivity;
 
 public class NetUtil
 {
   private static int CONN_TIMEOUT = 60000;
   private static int READ_TIMEOUT = 60000;
   
-  public static String getContentString(String paramString)
+/*  public static String getContentString(String paramString)
   {
     String content = null;
     HttpGet localHttpGet = new HttpGet(paramString);
@@ -50,6 +57,7 @@ public class NetUtil
       return content;
     }
   }
+
   
   public static InputStream getInputStream(String paramString)
     throws MalformedURLException, IOException
@@ -60,8 +68,36 @@ public class NetUtil
     localHttpURLConnection.setReadTimeout(READ_TIMEOUT);
     localHttpURLConnection.connect();
     return localHttpURLConnection.getInputStream();
+  }*/
+
+    public static String inputStream2String(InputStream   is)
+            throws IOException{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        int i=-1;
+        while((i=is.read())!=-1){
+            baos.write(i);
+        }
+        return  baos.toString();
+    }
+
+    public static String getContentString(String urlStr){
+      String result = null;
+      URL url = null;
+      try {
+          url = new URL(urlStr);
+          HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+          conn.setConnectTimeout(5*1000);
+          conn.setRequestMethod("GET");
+          InputStream inStream = conn.getInputStream();
+          //byte[] data = StreamTool.readInputStream(inStream);
+          result = inputStream2String(inStream);
+      } catch (Exception e) {
+          e.printStackTrace();
+      }
+      System.out.println("@@@@@@@@@@@@@@@@@@"+result);
+      return result;
   }
-  
+
   public static boolean isNetworkConnected()
   {
     NetworkInfo localNetworkInfo = ((ConnectivityManager) MyApp.context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
