@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_activity_default">
+
+    <include
+        android:id="@+id/top_bar_fragment"
+        layout="@layout/fragment_top_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="70.0dip"
+        android:layout_alignParentTop="true" />
+
+    <RadioGroup
+        android:id="@+id/title_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_bar_fragment"
+        android:layout_marginTop="0.0dip"
+        android:orientation="horizontal"
+        android:paddingLeft="60.0dip"
+        android:paddingRight="60.0dip">
+
+        <RadioButton
+            android:id="@+id/title_recommend"
+            style="@style/TitleButton"
+            android:button="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/title_recommend" />
+
+        <RadioButton
+            android:id="@+id/title_movie"
+            style="@style/TitleButton"
+            android:button="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/title_movie" />
+
+        <RadioButton
+            android:id="@+id/title_joy"
+            style="@style/TitleButton"
+            android:button="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/title_entertainment" />
+
+        <RadioButton
+            android:id="@+id/title_service"
+            style="@style/TitleButton"
+            android:button="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/title_service" />
+
+        <RadioButton
+            android:id="@+id/title_application"
+            style="@style/TitleButton"
+            android:button="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/title_application" />
+
+        <RadioButton
+            android:id="@+id/title_setting"
+            style="@style/TitleButton"
+            android:button="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/title_setting" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_layout_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title_group"
+        android:layout_marginTop="-10.0dip" />
+    <!--<com.joy.launcher.widge.MarqueeTextView android:textSize="23.0sp" android:gravity="center" android:id="@+id/marqueeTextView" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:layout_marginLeft="100.0dip" android:layout_marginRight="100.0dip" android:layout_marginBottom="10.0dip" android:text="@string/welcome" android:layout_alignParentBottom="true" /> -->
+    <TextView
+        android:id="@+id/marqueeTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginLeft="100.0dip"
+        android:layout_marginRight="100.0dip"
+        android:visibility="gone"
+        android:gravity="center"
+        android:text="@string/welcome"
+        android:textSize="23.0sp" />
+</RelativeLayout>

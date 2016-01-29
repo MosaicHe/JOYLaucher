@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="-25.0dip"
+    android:scrollbars="none">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dip"
+        android:layout_marginRight="100dip">
+
+        <FrameLayout
+            android:id="@+id/set_fl_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="360dip"
+            android:layout_marginTop="25.0dip">
+
+            <ImageView
+                android:id="@+id/set_bg_2"
+                android:layout_width="340dip"
+                android:layout_height="545dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_porit" />
+
+            <ImageView
+                android:id="@+id/weather_settings"
+                android:layout_width="300dip"
+                android:layout_height="500dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginTop="25.0dip"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scaleType="fitXY"
+                android:nextFocusUp="@+id/title_setting"
+                android:src="@drawable/weather_icon" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/set_fl_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="680dip"
+            android:layout_marginRight="25dip"
+            android:layout_marginTop="345dip">
+
+            <ImageView
+                android:id="@+id/set_bg_4"
+                android:layout_width="235dip"
+                android:layout_height="215dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_porit" />
+
+            <ImageView
+                android:id="@+id/clean_key"
+                android:layout_width="210dip"
+                android:layout_height="195dip"
+                android:layout_marginLeft="13dip"
+                android:layout_marginTop="10.0dip"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:focusableInTouchMode="true"
+
+                android:src="@drawable/setting_0" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/set_fl_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="900dip"
+            android:layout_marginRight="25dip"
+            android:layout_marginTop="345dip">
+
+            <ImageView
+                android:id="@+id/set_bg_5"
+                android:layout_width="235dip"
+                android:layout_height="215dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_porit" />
+
+            <ImageView
+                android:id="@+id/vip_center"
+                android:layout_width="210dip"
+                android:layout_height="195dip"
+                android:layout_marginLeft="13dip"
+                android:layout_marginTop="10.0dip"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:focusableInTouchMode="true"
+
+                android:src="@drawable/setting_2" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/set_fl_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="675.0dip"
+            android:layout_marginRight="25dip"
+            android:layout_marginTop="30.0dip">
+
+            <ImageView
+                android:id="@+id/set_bg_3"
+                android:layout_width="470.0dip"
+                android:layout_height="330dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_middle" />
+
+
+            <ImageView
+                android:id="@+id/about_us"
+                android:layout_width="430.0dip"
+                android:layout_height="290dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginTop="20.0dip"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:focusableInTouchMode="true"
+                android:nextFocusUp="@+id/title_setting"
+                android:src="@drawable/setting_3" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/set_fl_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dip"
+            android:layout_marginTop="25.0dip">
+
+            <ImageView
+                android:id="@+id/set_bg_1"
+                android:layout_width="340dip"
+                android:layout_height="545dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_porit" />
+
+            <ImageView
+                android:id="@+id/setting_sys"
+                android:layout_width="300dip"
+                android:layout_height="500dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginTop="25.0dip"
+                android:clickable="true"
+                android:focusable="true"
+                android:nextFocusUp="@+id/title_setting"
+                android:focusableInTouchMode="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/system_icon" />
+        </FrameLayout>
+    </FrameLayout>
+</HorizontalScrollView>

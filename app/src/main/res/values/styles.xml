@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TitleButton">
+        <item name="android:textSize">24.0sp</item>
+        <item name="android:textColor">@drawable/title_textcolor_selector</item>
+        <item name="android:background">@drawable/title_button_selector</item>
+        <item name="android:layout_width">@dimen/radiobutton_width</item>
+        <item name="android:layout_height">@dimen/radiobutton_height</item>
+    </style>
+
+    <style name="MyImage">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">@dimen/little_image_poster_width</item>
+        <item name="android:layout_height">@dimen/little_image_poster_height</item>
+        <item name="android:layout_marginTop">70.0dip</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+    <style name="MyImage_right">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">@dimen/right_big_image_poster_width</item>
+        <item name="android:layout_height">@dimen/right_big_image_poster_height</item>
+        <item name="android:layout_marginLeft">40.0dip</item>
+        <item name="android:layout_marginTop">25.0dip</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+    <style name="MyImageBg">
+        <item name="android:layout_width">@dimen/little_image_bg_width</item>
+        <item name="android:layout_height">@dimen/little_image_bg_height</item>
+        <item name="android:layout_marginTop">@dimen/little_image_bg_marginTop</item>
+    </style>
+    <style name="MyImageBg_right">
+        <item name="android:layout_width">@dimen/right_little_image_bg_width</item>
+        <item name="android:layout_height">@dimen/right_little_image_bg_height</item>
+        <item name="android:layout_marginLeft">@dimen/right_little_image_bg_marginLeft</item>
+        <item name="android:layout_marginTop">@dimen/right_little_image_bg_marginTop</item>
+    </style>
+</resources>
