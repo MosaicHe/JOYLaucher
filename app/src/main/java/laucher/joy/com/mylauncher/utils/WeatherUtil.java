@@ -21,7 +21,7 @@ import laucher.joy.com.mylauncher.entity.AdBean;
 public class WeatherUtil
 {
     final static String WEATHER_URL_HEADER = "http://www.weather.com.cn/data/cityinfo/";
-    final static String PROVINCE_URL = "http://www.weather.com.cn/data/list3/city.xml?level=1";
+    //final static String WEATHER_URL_HEADER ="http://www.weather.com.cn/adat/sk/";
 
   public static final String CITY_CODE = "city_code";
   public static final String VALID_TIME = "validtime";
@@ -41,10 +41,10 @@ public class WeatherUtil
         String content = null; //结果字符串
         try {
             InputStream is = mContext.getResources().getAssets().open(fileName); //打开文件
-            int ch = 0;
+            byte[] buffer = new byte[1024];
             ByteArrayOutputStream out = new ByteArrayOutputStream(); //实现了一个输出流
-            while ((ch = is.read()) != -1) {
-                out.write(ch); //将指定的字节写入此 byte 数组输出流
+            while ((is.read(buffer)) != -1) {
+                out.write(buffer); //将指定的字节写入此 byte 数组输出流
             }
             byte[] buff = out.toByteArray();//以 byte 数组的形式返回此输出流的当前内容
             out.close(); //关闭流
@@ -95,7 +95,7 @@ public class WeatherUtil
                         if(array!=null){
                             for(int j=0;j<array.length();j++){
                                 cityList.add(array.getJSONObject(j).getString("市名"));
-                                System.out.println(array.getJSONObject(j).getString("市名"));
+                                //System.out.println(array.getJSONObject(j).getString("市名"));
                             }
                         }
                     }
@@ -110,7 +110,6 @@ public class WeatherUtil
     }
 
     public static String getCityCode(Context mContext, String city){
-        ArrayList<String> cityList = new ArrayList<String>();
         String rawContent = getStringFromAssert(mContext, "WeatherData.json");
         try
         {
@@ -140,12 +139,8 @@ public class WeatherUtil
 
   public static String getWeatherInfo(Context mContext, String cityCode)
   {
-
-      getProvinceList(mContext);
-      getProvinceCityList(mContext, "广东");
-      System.out.println(getCityCode(mContext,"深圳"));
-
     String weatherUrlStr = WEATHER_URL_HEADER + cityCode + ".html";
+      System.out.println("@@@@@@@@@@@@@@@@@@@@" + weatherUrlStr);
     String weatherInfoStr = validCity(mContext, cityCode);
     if (weatherInfoStr == null){
       String weatherContentStr = NetUtil.getContentString(weatherUrlStr);
@@ -155,12 +150,12 @@ public class WeatherUtil
           JSONObject localJSONObject = new JSONObject(weatherContentStr).getJSONObject("weatherinfo");
           if (localJSONObject != null)
           {
-              weatherInfoStr = localJSONObject.getString("city") + "  " + localJSONObject.getString("weather") + "  " + localJSONObject.getString("temp1");
+              weatherInfoStr = localJSONObject.getString("city") + "  " + localJSONObject.getString("weather") + "  " +localJSONObject.getString("temp2") + "/"+ localJSONObject.getString("temp1");
               System.out.println(weatherInfoStr);
               SPUtils.setString(mContext, "validtime", DateUtil.setValidTime());
               SPUtils.setString(mContext, "city_code", cityCode);
               SPUtils.setString(mContext, "weatherinfo", weatherInfoStr);
-              System.out.println("@@@@@@@@@@@@@@@@@@@@" + weatherInfoStr);
+              //System.out.println("@@@@@@@@@@@@@@@@@@@@" + weatherInfoStr);
           }
         }
         catch (JSONException localJSONException)

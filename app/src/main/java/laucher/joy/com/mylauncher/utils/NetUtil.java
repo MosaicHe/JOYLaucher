@@ -77,6 +77,7 @@ public class NetUtil
         while((i=is.read())!=-1){
             baos.write(i);
         }
+        baos.close();
         return  baos.toString();
     }
 
@@ -86,11 +87,12 @@ public class NetUtil
       try {
           url = new URL(urlStr);
           HttpURLConnection conn = (HttpURLConnection)url.openConnection();
-          conn.setConnectTimeout(5*1000);
+          //conn.setConnectTimeout(10*1000);
           conn.setRequestMethod("GET");
           InputStream inStream = conn.getInputStream();
           //byte[] data = StreamTool.readInputStream(inStream);
           result = inputStream2String(inStream);
+          inStream.close();
       } catch (Exception e) {
           e.printStackTrace();
       }

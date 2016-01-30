@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Process;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -90,13 +91,22 @@ public class HomeActivity extends FragmentActivity {
         {
             public void run()
             {
-                String str = WeatherUtil.getWeatherInfo(HomeActivity.this, cityCode);
-                if (str != null)
-                {
-                    Message message = new Message();
-                    message.what = UPDATE_WEATHER;
-                    message.obj = str;
-                    handler.sendMessage(message);
+                String str = null;
+                for(int i=0;i<10;i++) {
+                    str = WeatherUtil.getWeatherInfo(HomeActivity.this, cityCode);
+                    if (str != null) {
+                        Message message = new Message();
+                        message.what = UPDATE_WEATHER;
+                        message.obj = str;
+                        handler.sendMessage(message);
+                        return;
+                    }else{
+                        Message message = new Message();
+                        message.what = UPDATE_WEATHER;
+                        message.obj = "正在获取天气数据...";
+                        handler.sendMessage(message);
+                        SystemClock.sleep(10*1000);
+                    }
                 }
             }
         }).start();
@@ -107,7 +117,7 @@ public class HomeActivity extends FragmentActivity {
     protected void onResume() {
         super.onResume();
         centerPager.setCurrentItem(focus);//设置当前显示标签页为第一页
-        initWeatherInfo(SharedPreferenceUtil.getString("city_id", "101280601"));
+        initWeatherInfo(SharedPreferenceUtil.getString("city_id", "101280601"));//default city is shenzhen
         startAnimation(focus);
     }
 
