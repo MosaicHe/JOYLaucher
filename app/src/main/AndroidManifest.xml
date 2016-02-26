@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="laucher.joy.com.mylauncher">
+    package="laucher.joy.com.JOYLauncher">
     <supports-screens android:anyDensity="true"
         android:smallScreens="true"
         android:normalScreens="true"
@@ -28,12 +28,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name="laucher.joy.com.mylauncher.MyApp"
+        android:name="laucher.joy.com.JOYLauncher.MyApp"
         android:theme="@style/AppTheme">
 
         <activity  android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:name="laucher.joy.com.mylauncher.activity.IndexActivity"
+            android:name="laucher.joy.com.JOYLauncher.activity.IndexActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
         </activity>
         <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:label="@string/app_name"
-            android:name="laucher.joy.com.mylauncher.activity.HomeActivity"
+            android:name="laucher.joy.com.JOYLauncher.activity.HomeActivity"
             android:screenOrientation="landscape" />
 
         <activity android:name=".activity.WebActivity"/>

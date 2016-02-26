@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MYLauncher</string>
+    <string name="app_name">JOYLauncher</string>
     <string name="msg_failed_got_info">Failed to get version info of application from Service.</string>
     <string name="msg_has_updates">New version available,current {0}，new version is {1}。</string>
     <string name="msg_updated_version_info">"Newest version. Don't need to update."</string>
